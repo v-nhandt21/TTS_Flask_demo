@@ -7,7 +7,7 @@ matplotlib==2.1.0
 #numpy==1.18.1
 http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
 scikit-learn==0.22.1
-tensorflow==1.14.0
+tensorflow==1.15.2
 unidecode==1.0.22
 inflect==4.1.0
 SoundFile
