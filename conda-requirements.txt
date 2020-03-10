@@ -40,7 +40,7 @@ h5py==2.10.0
 hdf5==1.10.4
 icu==58.2
 importlib_metadata==1.5.0
-inflect==4.1.0
+#inflect==4.1.0
 intel-openmp==2020.0
 ipykernel==5.1.4
 ipython==7.12.0
