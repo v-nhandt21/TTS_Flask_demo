@@ -11,7 +11,7 @@ attrs==19.3.0
 #audioread==2.1.8
 backcall==0.1.0
 blas==1.0
-bleach==3.1.0
+bleach==3.1.1
 bzip2==1.0.8
 c-ares==1.15.0
 ca-certificates==2020.1.1
