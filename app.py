@@ -5,7 +5,7 @@ sys.path.append('Service/')
 sys.path.append('Service/waveglow/')
 import warnings
 warnings.filterwarnings("ignore")
-from inference import getAudio
+#from inference import getAudio
 app = Flask(__name__, static_url_path='/static')
 
 
@@ -22,7 +22,7 @@ def demo():
         if "back" in request.form:
             return render_template('demo_input.html')
         text = request.form['text']
-        text = getAudio(text)
+        #text = getAudio(text)
         text_hashed=abs(hash(text)) % (10 ** 8)
         audio="static/audio/"+str(text_hashed)+'.wav'
         return render_template('demo_audio.html', text=text,audio=audio)
