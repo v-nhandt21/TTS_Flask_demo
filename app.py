@@ -3,6 +3,8 @@ from flask import Flask, render_template, request,json
 import sys
 sys.path.append('Service/')
 sys.path.append('Service/waveglow/')
+import warnings
+warnings.filterwarnings("ignore")
 from inference import getAudio
 app = Flask(__name__, static_url_path='/static')
 
