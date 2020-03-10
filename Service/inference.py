@@ -10,12 +10,12 @@ import sys
 print(sys.executable)
 
 
-import matplotlib
+#import matplotlib 
 #get_ipython().run_line_magic('matplotlib', 'inline')
 
-matplotlib.use('agg')
+#matplotlib.use('agg')
 #import matplotlib.pyplot as plt
-import matplotlib.pylab as plt
+#import matplotlib.pylab as plt
 
 import sys
 sys.path.append('waveglow/')
@@ -32,11 +32,12 @@ from denoiser import Denoiser
 import soundfile as sd
 from vinorm import TTSnorm
 import os
-
+"""
 def plot_data(data, figsize=(16, 4)):
     fig, axes = plt.subplots(1, len(data), figsize=figsize)
     for i in range(len(data)):
         axes[i].imshow(data[i], aspect='auto', origin='bottom', interpolation='none')
+"""
 def getAudio(text):
     __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
     hparams = create_hparams()

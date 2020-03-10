@@ -1,10 +1,10 @@
-import tensorflow as tf
+#import tensorflow as tf
 from text import symbols
 
 
 def create_hparams(hparams_string=None, verbose=False):
     """Create model hyperparameters. Parse nondefault from given string."""
-
+    '''
     hparams = tf.contrib.training.HParams(
         ################################
         # Experiment Parameters        #
@@ -88,12 +88,13 @@ def create_hparams(hparams_string=None, verbose=False):
         batch_size=32,
         mask_padding=True  # set model's padded outputs to padded values
     )
-
+    '''
+'''Because of tensorflow over large
     if hparams_string:
         tf.logging.info('Parsing command line hparams: %s', hparams_string)
         hparams.parse(hparams_string)
 
     if verbose:
         tf.logging.info('Final parsed hparams: %s', hparams.values())
-
+'''
     return hparams
