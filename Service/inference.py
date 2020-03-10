@@ -6,7 +6,7 @@
 
 
 import sys
-import soundfile as sd
+#import soundfile as sd
 print(sys.executable)
 
 
