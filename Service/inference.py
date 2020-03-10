@@ -11,6 +11,9 @@ print(sys.executable)
 
 import matplotlib
 #get_ipython().run_line_magic('matplotlib', 'inline')
+
+matplotlib.use('agg')
+#import matplotlib.pyplot as plt
 import matplotlib.pylab as plt
 
 import sys
