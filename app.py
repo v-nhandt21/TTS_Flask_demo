@@ -27,8 +27,9 @@ def demo():
         text = request.form['text']
 
 
-	text = TTSrawUpper(text)
+        text = TTSrawUpper(text)
         #text = getAudio(text)
+
         text_hashed=abs(hash(text)) % (10 ** 8)
         audio="static/audio/"+str(text_hashed)+'.wav'
         return render_template('demo_audio.html', text=text,audio=audio)
