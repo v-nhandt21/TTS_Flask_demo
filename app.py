@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template, request,json
 import sys
+
+from vinorm import TTSrawUpper
+
 sys.path.append('Service/')
 sys.path.append('Service/waveglow/')
 import warnings
@@ -22,6 +25,9 @@ def demo():
         if "back" in request.form:
             return render_template('demo_input.html')
         text = request.form['text']
+
+
+	text = TTSrawUpper(text)
         #text = getAudio(text)
         text_hashed=abs(hash(text)) % (10 ** 8)
         audio="static/audio/"+str(text_hashed)+'.wav'
