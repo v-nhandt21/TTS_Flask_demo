@@ -1,4 +1,4 @@
-#vinorm==1.0.0
+vinorm==1.0.0
 #librosa==0.7.2
 resampy==0.2.2
 flask==1.1.1
@@ -6,7 +6,7 @@ gunicorn==20.0.4
 #matplotlib==2.1.0 not install this because it is too big in server
 numpy==1.18.1
 #http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
-scikit-learn==0.22.1
+#scikit-learn==0.22.1
 #tensorflow==1.14.0 not install this because it is too big
 unidecode==1.0.22
 inflect==4.1.0
