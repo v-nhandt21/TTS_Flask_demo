@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AILAB - Demo - Noah</title>
+
+</head>
+
+<body>
+    <h2>Sample audio for: Tacotron2 with Waveglow for Vietnamese</h2>
+
+    <h3>Data for training: BigCorpus VLSP 2019: include noise</h3>
+
+    <h3>Initial result:</h3>
+    <ul style="list-style-type:square;">
+        <li>Training data not include punctuation: coma and dot => Can not stop the audio when finish sentence, coma=>"ơ" </li>
+        <li>The sample rate of audio is 22050 that was speed up for more natural</li>
+        <li>The output voice has too much noise</li>
+        <li>Some cases out-of-domain do not work well as English results: example: syllables with only one character: "ê ơ k "</li>
+    </ul>
+
+    <h3>Improvement</h3>
+    <ul style="list-style-type:square;">
+        <li>Re-train the BigCorpus with dot at the end of each sentence</li>
+        <li>Use the result of BigCorpus as pretrain for training the SmallCorpus</li>
+        <li>Try some Hyperparameter optimization</li>
+        <li>The input is still 96 Vietnamese character, not include Uppercase, Try "JOINT REPRESENTATION OF CHARACTERS AND PHONEMES" method for out of domain cases</li>
+        <li>Try to use Transformer-TTS method</li>
+
+    </ul>
+
+    {% for line in lines %}
+        {% set i = loop.index %}
+        {% set y = i %}
+        <h4>{{line}}</h4>
+        <audio controls>
+            <source src="static/audio/{{y}}.wav" type="audio/wav">
+            </audio>
+
+    {% endfor %}
+
+
+
+
+</body>
+
+</html>

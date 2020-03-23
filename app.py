@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+DEV=1
 from flask import Flask, render_template, request,json
 import sys
 
@@ -8,7 +9,8 @@ sys.path.append('Service/')
 sys.path.append('Service/waveglow/')
 import warnings
 warnings.filterwarnings("ignore")
-#from inference import getAudio
+if DEV:
+    from inference import getAudio
 app = Flask(__name__, static_url_path='/static')
 
 
@@ -28,7 +30,8 @@ def demo():
 
 
         text = TTSrawUpper(text)
-        #text = getAudio(text)
+        if DEV:
+            text = getAudio(text)
 
         text_hashed=abs(hash(text)) % (10 ** 8)
         audio="static/audio/"+str(text_hashed)+'.wav'
@@ -38,6 +41,12 @@ def demo():
         #return "Nhan"
 
 
+@app.route("/sample" , methods=['GET', 'POST'])
+def sample():
+    with open("static/sample.txt", "r" ,encoding="utf-8") as f:
+        lines = f.readlines()
+        print(lines)
+    return render_template('sample.html',lines=lines)
 
 if __name__ == "__main__":
     app.run(port=5018)
