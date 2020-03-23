@@ -3,7 +3,7 @@ DEV=1
 from flask import Flask, render_template, request,json
 import sys
 
-from vinorm import TTSrawUpper
+#from vinorm import TTSrawUpper
 
 sys.path.append('Service/')
 sys.path.append('Service/waveglow/')
@@ -29,7 +29,7 @@ def demo():
         text = request.form['text']
 
 
-        text = TTSrawUpper(text)
+        #text = TTSrawUpper(text)
         if DEV:
             text = getAudio(text)
 
