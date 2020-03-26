@@ -48,13 +48,15 @@ def sample():
         print(lines)
     return render_template('sample.html',lines=lines)
 
-@app.route("/record" , methods=['GET', 'POST'])
-def record():
+@app.route("/record/<setsample_>" , methods=['GET', 'POST'])
+def record(setsample_):
+    sample = int(setsample_)
     with open("static/record.txt", "r" ,encoding="utf-8") as f:
         lines = f.read().splitlines()
-        print(lines)
-        lines = lines[0:100]
-    return render_template('record.html',lines=lines)
+        
+        lines = lines[100*sample:100*sample+100]
+        print("++++++++++++++++++",len(lines))
+    return render_template('record.html',lines=lines,sample=sample)
 
 if __name__ == "__main__":
     app.run(port=5018)
