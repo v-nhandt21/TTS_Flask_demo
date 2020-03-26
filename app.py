@@ -48,6 +48,14 @@ def sample():
         print(lines)
     return render_template('sample.html',lines=lines)
 
+@app.route("/record" , methods=['GET', 'POST'])
+def record():
+    with open("static/record.txt", "r" ,encoding="utf-8") as f:
+        lines = f.read().splitlines()
+        print(lines)
+        lines = lines[0:100]
+    return render_template('record.html',lines=lines)
+
 if __name__ == "__main__":
     app.run(port=5018)
 
