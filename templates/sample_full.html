@@ -43,7 +43,7 @@
         {% set i = loop.index %}
         {% set y = i %}
         <h4>{{line}}</h4>
-        <audio controls>
+        <audio controls preload="none">
             <source src="static/audio/{{y}}.wav" type="audio/wav">
             </audio>
 
