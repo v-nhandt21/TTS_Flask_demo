@@ -47,13 +47,12 @@
     {% for line in lines %}
         {% set i = loop.index %}
         {% set y = i %}
-        {% if i> 90%}
         <h4>{{line}}</h4>
         
         <audio controls preload="none">
             <source src="static/audio/{{y}}.wav" type="audio/wav">
             </audio>
-        {%endif%}
+
 
     {% endfor %}
     <br>
