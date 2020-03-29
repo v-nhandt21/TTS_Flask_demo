@@ -17,13 +17,8 @@
 
 <body>
     <h2>Sample audio for: Tacotron2 with Waveglow for Vietnamese</h2>
+    
     <br>
-    <br>
-    <h3 style="font-weight: bold; color: rgb(54, 190, 0);">Data for training: 299 audio sample</h3>
-    <audio controls>
-        <source src="static/audio/300.mp3" type="audio/mp3">
-        </audio>
-
     <h3 style="font-weight: bold;color: rgb(54, 190, 0);">Data for training: BigCorpus VLSP 2019: include noise</h3>
 
     <h3>Initial result:</h3>
@@ -43,21 +38,18 @@
         <li>Try to use Transformer-TTS method</li>
 
     </ul>
-
+    <h3 style="font-weight:800;color: rgb(54, 190, 0);">Wait to load full 100 audio ...</h3>
     {% for line in lines %}
         {% set i = loop.index %}
         {% set y = i %}
-        {% if i> 90%}
         <h4>{{line}}</h4>
-        
         <audio controls>
             <source src="static/audio/{{y}}.wav" type="audio/wav">
             </audio>
-        {%endif%}
 
     {% endfor %}
-    <br>
-    <a href="sample_full" style="font-weight: 900;color: rgb(54, 190, 0);" >FULL SAMPLE (wait to load)</a>
+
+
 
 
 </body>

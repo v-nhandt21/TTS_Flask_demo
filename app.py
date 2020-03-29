@@ -48,6 +48,13 @@ def sample():
         print(lines)
     return render_template('sample.html',lines=lines)
 
+@app.route("/sample_full" , methods=['GET', 'POST'])
+def sample_full():
+    with open("static/sample.txt", "r" ,encoding="utf-8") as f:
+        lines = f.readlines()
+        print(lines)
+    return render_template('sample_full.html',lines=lines)
+
 @app.route("/record/<setsample_>" , methods=['GET', 'POST'])
 def record(setsample_):
     sample = int(setsample_)
